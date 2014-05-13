@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=zustand
+comment0.target=Auge(boolean)
+comment1.params=
+comment1.target=void\ oeffne()
+comment2.params=
+comment2.target=void\ schliesse()
+comment3.params=
+comment3.target=boolean\ gibAugeZustand()
+numComments=4

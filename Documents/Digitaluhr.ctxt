@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=std\ min\ sek
+comment0.target=Digitaluhr(int,\ int,\ int)
+comment1.params=
+comment1.target=int\ gibStunde()
+comment2.params=
+comment2.target=int\ gibMinute()
+comment3.params=
+comment3.target=int\ gibSekunde()
+comment4.params=std\ min\ sek
+comment4.target=void\ setzeUhrzeit(int,\ int,\ int)
+comment5.params=
+comment5.target=void\ zeigeUhrzeit()
+numComments=6

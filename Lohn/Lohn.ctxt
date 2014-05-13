@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=name\ ansatz\ sollStunden\ ueberzeitFaktor\ wochenendFaktor
+comment0.target=Lohn(java.lang.String,\ double,\ double,\ double,\ double)
+comment1.params=tag\ anzahlStunden
+comment1.target=void\ rapportiereStunden(int,\ double)
+comment2.params=
+comment2.target=void\ uebersicht()
+comment3.params=i
+comment3.target=java.lang.String\ wochenTag(int)
+numComments=4

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Hund()
+comment1.params=linkesAugeOffen\ rechtesAugeOffen
+comment1.target=Hund(boolean,\ boolean)
+comment2.params=
+comment2.target=void\ augenOeffnen()
+comment3.params=
+comment3.target=void\ augenSchliessen()
+comment4.params=
+comment4.target=void\ zeigeAugen()
+numComments=5
