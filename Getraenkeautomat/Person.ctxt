@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Person()
+comment1.params=
+comment1.target=void\ verwendeAutomat()
+comment2.params=p
+comment2.target=void\ trinken(Produkt)
+numComments=3

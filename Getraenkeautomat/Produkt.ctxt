@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=preis\ name
+comment0.target=Produkt(double,\ java.lang.String)
+comment1.params=
+comment1.target=double\ gibPreis()
+comment2.params=
+comment2.target=java.lang.String\ gibName()
+numComments=3

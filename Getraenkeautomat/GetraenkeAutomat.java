@@ -2,18 +2,22 @@ import java.text.*;
 
 public class GetraenkeAutomat
 {
+    Display display;
     double betrag;
     DecimalFormat df = new DecimalFormat("#.00");
-    Slot ausgewaehlterSlot = null;
-    Slot[] slots = new Slot[4];
+    Produkt ausgewaehltesProdukt = null;
+    Produkt[] produkte = new Produkt[4];
     
     public GetraenkeAutomat()
     {
         betrag = 0;
-        slots[0] = new Slot(3.00, "Coca Cola", 5);        
-        slots[1] = new Slot(3.50, "Ice Tea", 4);
-        slots[2] = new Slot(3.60, "Wasser", 6);
-        slots[3] = new Slot(4.00, "Rivella", 10);
+        produkte[0] = new Produkt(3.00, "Coca Cola");        
+        produkte[1] = new Produkt(3.50, "Ice Tea");
+        produkte[2] = new Produkt(3.60, "Wasser");
+        produkte[3] = new Produkt(4.00, "Rivella");
+        
+        display = new Display();
+        display.zeigeBegruessung();
     }
     
     public double gibAktuellenBetrag()
@@ -21,28 +25,18 @@ public class GetraenkeAutomat
         return betrag;
     }
     
-    public void fuellstandAnzeigen(String getraenkeName)
+    public void produktWaehlen(int produktNummer)
     {
-        int fuellstand = 0;
-        for(int i = 0; i < slots.length; i++)
-        {
-         if(slots[i].gibName()== getraenkeName)
-         {
-            fuellstand += slots[i].gibAnzahl();   
-         }
-        }
-        System.out.println(getraenkeName + ": " + fuellstand);
-    }
-    
-    public void slotWaehlen(int slotNummer)
-    {
-        if(slotNummer < 0 || slotNummer >= slots.length)
+        if(produktNummer < 0 || produktNummer >= produkte.length)
         {
             System.out.println("Bitte einen gültigen Slot wählen!");
             return;
         }
-        this.ausgewaehlterSlot = slots[slotNummer];
-        System.out.println(ausgewaehlterSlot.gibName() + ": CHF " + df.format(ausgewaehlterSlot.gibPreis()));
+        this.ausgewaehltesProdukt = produkte[produktNummer];
+        
+        display.zeigeProduktInfo(this.ausgewaehltesProdukt);
+        
+        System.out.println(ausgewaehltesProdukt.gibName() + ": CHF " + df.format(ausgewaehltesProdukt.gibPreis()));
     }
     
     public double gibRueckgeld()
@@ -57,39 +51,39 @@ public class GetraenkeAutomat
        this.betrag += betrag;
     }
     
-    public void getraenkAusgeben()
+    public Produkt getraenkAusgeben()
     {
-        if(ausgewaehlterSlot == null)
+        if(ausgewaehltesProdukt == null)
         {
-        System.out.println("Fehler, es wurde kein Slot ausgewählt!");
-        return;
+            System.out.println("Fehler, es wurde kein Produkt ausgewählt!");
+            return null;
         }
         
-        if(ausgewaehlterSlot.gibAnzahl() < 1)
-        {
-            System.out.println("Fehler, der Slot ist leer!");
-            return;
-        }
-        
-        if(ausgewaehlterSlot.gibPreis() > betrag)
+        if(ausgewaehltesProdukt.gibPreis() > betrag)
         {
             System.out.println("Aktueller Betrag zu klein! Bitte genügend Geld einwerfen!");
-            return;
+            return null;
         }
         else
         {
-            betrag -= ausgewaehlterSlot.gibPreis();
-            ausgewaehlterSlot.getraenkBeziehen();
-            System.out.println("Getränk " + ausgewaehlterSlot.gibName() + " im Fach entnehmen!");
+            betrag -= ausgewaehltesProdukt.gibPreis();
+            Produkt gewaehlt = ausgewaehltesProdukt;
+            ausgewaehltesProdukt = null;
+            
+            for(int i = 0; i < produkte.length; i++)
+                if(gewaehlt == produkte[i])
+                    produkte[i] = null;
+            
+            return gewaehlt;
         }
     }   
     
     public void uebersicht()
     {
         System.out.println("########## Unser Getränkeautomat ##########");
-        for(int i = 0; i < slots.length; i++)
+        for(int i = 0; i < produkte.length; i++)
         {
-         System.out.println(slots[i].gibName() + ": CHF " + df.format(slots[i].gibPreis()) + " Anzahl: " + slots[i].gibAnzahl());         
+         System.out.println(produkte[i].gibName() + ": CHF " + df.format(produkte[i].gibPreis()));         
         }
         System.out.println("###########################################");
     }
