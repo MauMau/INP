@@ -8,6 +8,8 @@ public class Person
     {
         GetraenkeAutomat automat = new GetraenkeAutomat();
         
+        automat.uebersichtAnzeigen();
+        
         automat.geldEinwerfen(10);
         
         automat.produktWaehlen(0);

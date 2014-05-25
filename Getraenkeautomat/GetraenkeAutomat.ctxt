@@ -12,5 +12,5 @@ comment4.target=void\ geldEinwerfen(double)
 comment5.params=
 comment5.target=Produkt\ getraenkAusgeben()
 comment6.params=
-comment6.target=void\ uebersicht()
+comment6.target=void\ uebersichtAnzeigen()
 numComments=7

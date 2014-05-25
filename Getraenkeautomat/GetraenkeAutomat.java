@@ -4,7 +4,6 @@ public class GetraenkeAutomat
 {
     Display display;
     double betrag;
-    DecimalFormat df = new DecimalFormat("#.00");
     Produkt ausgewaehltesProdukt = null;
     Produkt[] produkte = new Produkt[4];
     
@@ -29,14 +28,12 @@ public class GetraenkeAutomat
     {
         if(produktNummer < 0 || produktNummer >= produkte.length)
         {
-            System.out.println("Bitte einen gültigen Slot wählen!");
+            display.zeigeFehler("Bitte einen gültigen Slot wählen!");
             return;
         }
         this.ausgewaehltesProdukt = produkte[produktNummer];
         
         display.zeigeProduktInfo(this.ausgewaehltesProdukt);
-        
-        System.out.println(ausgewaehltesProdukt.gibName() + ": CHF " + df.format(ausgewaehltesProdukt.gibPreis()));
     }
     
     public double gibRueckgeld()
@@ -55,13 +52,14 @@ public class GetraenkeAutomat
     {
         if(ausgewaehltesProdukt == null)
         {
-            System.out.println("Fehler, es wurde kein Produkt ausgewählt!");
+            display.zeigeFehler("Fehler, es wurde kein Produkt ausgewählt!");
             return null;
         }
         
         if(ausgewaehltesProdukt.gibPreis() > betrag)
         {
-            System.out.println("Aktueller Betrag zu klein! Bitte genügend Geld einwerfen!");
+            
+            display.zeigeFehler("Aktueller Betrag zu klein! Bitte genügend Geld einwerfen!");
             return null;
         }
         else
@@ -74,17 +72,15 @@ public class GetraenkeAutomat
                 if(gewaehlt == produkte[i])
                     produkte[i] = null;
             
+            
+            
+                    
             return gewaehlt;
         }
     }   
     
-    public void uebersicht()
+    public void uebersichtAnzeigen()
     {
-        System.out.println("########## Unser Getränkeautomat ##########");
-        for(int i = 0; i < produkte.length; i++)
-        {
-         System.out.println(produkte[i].gibName() + ": CHF " + df.format(produkte[i].gibPreis()));         
-        }
-        System.out.println("###########################################");
+        display.uebersichtAnzeigen(produkte);
     }
 }
