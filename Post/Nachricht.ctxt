@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=empfaenger\ absender\ text
+comment0.target=Nachricht(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\n\ Erstellt\ eine\ neue\ Nachricht\n\ @param\ \ \ empfaenger\ \ Emfp\u00E4nger\ der\ Nachricht\n\ @param\ \ \ absender\ \ \ \ Der\ Absender\ der\ Nachricht\n\ @param\ \ \ text\ \ \ \ \ \ \ \ Inhalt\ der\ Nachricht\n
+comment1.params=
+comment1.target=java.lang.String\ gibEmpfaenger()
+comment1.text=\n\ Gibt\ den\ Empf\u00E4nger\ der\ Nachricht\ zur\u00FCck\n\ \n\ @return\ \ \ \ \ der\ Empf\u00E4nger\ der\ Nachricht\n
+comment2.params=
+comment2.target=java.lang.String\ gibAbsender()
+comment2.text=\n\ Gibt\ den\ Absender\ der\ Nachricht\ zur\u00FCck\n\ \n\ @return\ \ \ \ \ der\ Absender\ der\ Nachricht\n
+comment3.params=
+comment3.target=java.lang.String\ gibText()
+comment3.text=\n\ Gibt\ den\ Inhalt\ der\ Nachricht\ zur\u00FCck\n\ \n\ @return\ \ \ \ \ der\ Inhalt\ der\ Nachricht\n
+numComments=4

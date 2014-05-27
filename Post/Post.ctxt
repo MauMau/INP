@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Post()
+comment1.params=nachricht
+comment1.target=boolean\ speichereNachricht(Nachricht)
+comment2.params=kundenName
+comment2.target=Nachricht\ holeNachricht(java.lang.String)
+numComments=3
