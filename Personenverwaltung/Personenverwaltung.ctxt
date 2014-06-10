@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Personenverwaltung()
+comment1.params=name
+comment1.target=void\ neuePersonHinzufuegen(java.lang.String)
+comment2.params=position
+comment2.target=java.lang.String\ gibPersonAnPosition(int)
+comment3.params=
+comment3.target=int\ gibAnzahlGespeichertePerson()
+comment4.params=position
+comment4.target=void\ loeschePersonAnPosition(int)
+numComments=5
