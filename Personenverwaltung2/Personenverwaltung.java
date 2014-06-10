@@ -106,4 +106,17 @@ public class Personenverwaltung
         
         return sum / pCount;
     }
+    
+    public int zaehleBestimmtenAnfangsbuchstaben(char buchstabe)
+    {
+        int count = 0;
+        
+        for(Person p : personen)
+        {
+            if(p.gibName().charAt(0) == buchstabe)
+                count++;
+        }
+        
+        return count;
+    }
 }
