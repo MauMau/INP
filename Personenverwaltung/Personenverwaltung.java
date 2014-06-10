@@ -40,4 +40,28 @@ public class Personenverwaltung
         
         personen.remove(position);
     }
+    
+    public void alleNamenAnzeigen()
+    {
+        for(String name : personen)
+        {
+            System.out.println(name);
+        }
+    }
+    
+    public boolean istPersonInSammlungVorhanden(String person)
+    {
+        for(String name : personen)
+        {
+            if(person == name)
+                return true;
+        }
+        
+        return false;
+    }
+    
+    public int gibPositionVonNamenInSammlung(String name)
+    {
+        return personen.indexOf(name);
+    }
 }
