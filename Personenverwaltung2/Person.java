@@ -25,9 +25,19 @@ public class Person
         return name;
     }
     
+    public void setzeName(String name)
+    {
+        this.name = name;
+    }
+    
     public String gibVorname()
     {
         return vorname;
+    }
+    
+    public String setzeVorname(String vorname)
+    {
+        this.vorname = vorname;
     }
     
     public String gibTelNr()
@@ -35,13 +45,28 @@ public class Person
         return telNr;
     }
     
+    public String setzeHandyNr(String handyNr)
+    {
+        this.handyNr = handyNr;
+    }
+    
     public String gibHandyNr()
     {
         return handyNr;
     }
     
+    public String setzeHandyNr(String handyNr)
+    {
+        this.handyNr = handyNr;
+    }
+    
     public int gibAlter()
     {
         return alter;
+    }
+    
+    public void setzeAlter(int alter)
+    {
+        this.alter = alter;
     }
 }
