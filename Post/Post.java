@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Stellt eine Post dar, auf welcher jeweils eine Nachricht abgelegt werden kann.
+ * Stellt eine Post dar, auf welcher mehrere Nachrichten abgelegt werden können.
  * Kunden können Nachrichten ablegen und abholen.
  * 
  * @author Maurus Kühne 
@@ -24,8 +24,7 @@ public class Post
      * 
      * @param   nachricht   Die abzulegende Nachricht
      * 
-     * @return true: Nachricht konnte abgelegt werden, false: Bereits eine Nachricht vorhanden,
-     *         ablegen nicht möglich
+     * @return true: Nachricht konnte abgelegt werden, false: Nachrich konnte nicht abgelegt werden
      */
     public boolean speichereNachricht(Nachricht nachricht)
     {
@@ -33,12 +32,12 @@ public class Post
     }
     
     /**
-     * Erstellt eine neue Nachricht
+     * Holt die nächste Nachricht für den Kunden ab
      * 
      * @param   empfaenger  Empfänger der Nachricht
      * @param   text        Inhalt der nachricht
      * 
-     * @return true: Nachricht konnte abgelegt werden, false, konnte nicht abgelegt werden
+     * @return Nachricht die abgeholt wurde
      */
     public Nachricht holeNachricht(String kundenName)
     {
@@ -46,17 +45,15 @@ public class Post
         
         for(Nachricht nachricht : nachrichten)
         {   
-            if(nachricht != null && nachricht.gibEmpfaenger() == kundenName)
+            if(nachricht.gibEmpfaenger() == kundenName)
             {
                 returnValue = nachricht;
-                break;
+                this.nachrichten.remove(returnValue);
+                return returnValue;
             }
         }
         
-        if(returnValue != null)
-            this.nachrichten.remove(returnValue);
-        
-        return returnValue;
+        return null;
     }
     
 }
