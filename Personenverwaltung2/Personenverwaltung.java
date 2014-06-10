@@ -77,4 +77,20 @@ public class Personenverwaltung
         
         personen.add(p);
     }
+    
+    public void listeAusgeben()
+    {
+        System.out.println("--------------------------");
+        
+        for(Person p : personen)
+        {
+            System.out.println("Vorname: " + p.gibVorname());
+            System.out.println("Nachname: " + p.gibName());
+            System.out.println("Alter: " + p.gibAlter());
+            System.out.println("TelNr: " + p.gibTelNr());
+            System.out.println("HandyNr: " + p.gibHandyNr());
+        }
+        
+        System.out.println("--------------------------");
+    }
 }
