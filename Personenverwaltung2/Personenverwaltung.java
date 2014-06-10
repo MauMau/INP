@@ -119,4 +119,20 @@ public class Personenverwaltung
         
         return count;
     }
+    
+    public Person gibAeltestePerson()
+    {
+        Person p = null;
+        int maxAlter = 0;
+        for(Person person : personen)
+        {
+            if(person.gibAlter() > maxAlter)
+            {
+                p = person;
+                maxAlter = person.gibAlter();
+            }
+        }
+        
+        return p;
+    }
 }
