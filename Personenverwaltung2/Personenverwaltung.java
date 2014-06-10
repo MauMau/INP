@@ -93,4 +93,17 @@ public class Personenverwaltung
         
         System.out.println("--------------------------");
     }
+    
+    public int gibAltersDurchschnitt()
+    {
+        int pCount = personen.size();
+        int sum = 0;
+        
+        for(Person p : personen)
+        {
+            sum += p.gibAlter();
+        }
+        
+        return sum / pCount;
+    }
 }
