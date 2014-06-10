@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Personenverwaltung
 {
@@ -64,12 +65,14 @@ public class Personenverwaltung
     {
         for(Person p : personen)
         {
-            if(name == p.gibName())
+            if(name.equals(p.gibName()))
                 return personen.indexOf(p);
         }
         
         return -1;
     }
+    
+    //complex
     
     public void personEinfuegen(String vorname, String nachname, int alter, String telnummer, String handynummer)
     {
@@ -89,9 +92,11 @@ public class Personenverwaltung
             System.out.println("Alter: " + p.gibAlter());
             System.out.println("TelNr: " + p.gibTelNr());
             System.out.println("HandyNr: " + p.gibHandyNr());
+            
+            
+            System.out.println("--------------------------");
         }
         
-        System.out.println("--------------------------");
     }
     
     public int gibAltersDurchschnitt()
@@ -113,7 +118,7 @@ public class Personenverwaltung
         
         for(Person p : personen)
         {
-            if(p.gibName().charAt(0) == buchstabe)
+            if(p.gibName().charAt(0) == (buchstabe))
                 count++;
         }
         
@@ -135,4 +140,139 @@ public class Personenverwaltung
         
         return p;
     }
+    
+    //very complex
+    
+    public int anzahlGleicherPersonenBestimmen()
+    {
+        int retVal = 0;
+        ArrayList<Person> geprueftePersonen = new ArrayList<Person>();
+        
+        for(Person p : personen)
+        {
+            geprueftePersonen.add(p);
+            for(Person p2 : personen)
+            {
+                if(!geprueftePersonen.contains(p2))
+                {
+                    if(p.gibVorname().equals(p2.gibVorname()) &&
+                       p.gibName().equals(p2.gibName()) &&
+                       p.gibAlter() == p2.gibAlter() &&
+                       p.gibTelNr().equals(p2.gibTelNr()) &&
+                       p.gibHandyNr().equals(p2.gibHandyNr()))
+                    {
+                        retVal++;
+                    }
+                }
+            }
+        }
+        
+        return retVal;
+    }
+    
+    public void setup()
+    {
+        this.personEinfuegen("mk", "mk", 22, "mk","mk");
+        this.personEinfuegen("nk", "nk", 24, "nk","nk");
+        this.personEinfuegen("mk", "mk", 22, "mk","mk");
+    }
+    
+    public Person suchePersonNachNachname(String nachname)
+    {
+        Person retVal = null;
+        for(Person p : personen)
+        {
+            if(p.gibName().equals(nachname))
+            {
+                retVal = p;
+                break;
+            }
+        }
+        
+        return retVal;
+    }
+    
+    public ArrayList<Person> suchePersonenNachNachname(String nachname)
+    {
+        ArrayList<Person> retVals = new ArrayList<Person>();
+        for(Person p : personen)
+        {
+            if(p.gibName().equals(nachname))
+            {
+                retVals.add(p);
+            }
+        }
+        
+        return retVals;
+    }
+    
+    public Person suchePerson(String vorname, String nachname, int alter)
+    {
+        Person retVal = null;
+        for(Person p : personen)
+        {
+            if(p.gibName().equals(nachname) && p.gibVorname().equals(vorname) && 
+               alter == p.gibAlter())
+            {
+                retVal = p;
+                break;
+            }
+        }
+        
+        return retVal;
+    }
+    
+    public Person suchePerson(Person p)
+    {
+        return this.suchePerson(p.gibVorname(), p.gibName(), p.gibAlter());
+    }
+    
+    public boolean entfernePerson(int position)
+    {
+        if(personen.size() < position && position > 0)
+        {
+            personen.remove(position);
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public boolean entfernePerson(Person p)
+    {
+        if(personen.contains(p))
+        {
+            personen.remove(p);      
+            return true;
+        }
+        return false;
+    }
+    
+    public void entferneDuplikate()
+    {
+        ArrayList<Person> geprueftePersonen = new ArrayList<Person>();
+        ArrayList<Person> zuEntfernen = new ArrayList<Person>();
+        
+        for(Person p : personen)
+        {
+            geprueftePersonen.add(p);
+            for(Person p2 : personen)
+            {
+                if(!geprueftePersonen.contains(p2))
+                {
+                    if(p.gibVorname().equals(p2.gibVorname()) &&
+                       p.gibName().equals(p2.gibName()) &&
+                       p.gibAlter() == p2.gibAlter() &&
+                       p.gibTelNr().equals(p2.gibTelNr()) &&
+                       p.gibHandyNr().equals(p2.gibHandyNr()))
+                    {
+                        zuEntfernen.add(p2);
+                    }
+                }
+            }
+        }
+        
+        personen.removeAll(zuEntfernen);
+    }
 }
+
