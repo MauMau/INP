@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.params=post\ name
 comment0.target=Kunde(Post,\ java.lang.String)
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Kunde\n
+comment0.text=\n\ Erstellt\ einen\ neuen\ Kunden\n\ \n\ @param\ \ \ post\ \ \ \ Die\ Post,\ bei\ welcher\ der\ Kunde\ seine\ Nachrichten\ ablegen\ soll\n\ @param\ \ \ name\ \ \ \ Name\ des\ Kunden\n
 comment1.params=empfaenger\ text
 comment1.target=boolean\ neueNachricht(java.lang.String,\ java.lang.String)
+comment1.text=\n\ Erstellt\ eine\ neue\ Nachricht\n\ \n\ @param\ \ \ empfaenger\ \ Empf\u00E4nger\ der\ Nachricht\n\ @param\ \ \ text\ \ \ \ \ \ \ \ Inhalt\ der\ nachricht\n\ \n\ @return\ true\:\ Nachricht\ konnte\ abgelegt\ werden,\ false,\ konnte\ nicht\ abgelegt\ werden\n
 comment2.params=
 comment2.target=Nachricht\ holeNaechsteNachricht()
+comment2.text=\n\ Holt\ Nachricht\ von\ der\ Post\ ab,\ sofern\ sie\ an\ diesen\ Kunden\ verschickt\ wurde\n\ \n\ @return\ Die\ von\ der\ Post\ abgeholte\ Nachricht.\ Gibt\ NULL\ zur\u00FCck\ wenn\ keine\ Nachricht\ vorhanden\n
 numComments=3

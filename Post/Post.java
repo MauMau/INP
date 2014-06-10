@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Stellt eine Post dar, auf welcher jeweils eine Nachricht abgelegt werden kann.
@@ -8,14 +9,14 @@
  */
 public class Post
 {
-    private Nachricht nachricht;
+    private ArrayList<Nachricht> nachrichten;
 
     /**
      * Erstellt eine neue Post-Instanz
      */
     public Post()
     {
-        nachricht = null;
+        nachrichten = new ArrayList<Nachricht>();
     }
     
     /**
@@ -28,14 +29,7 @@ public class Post
      */
     public boolean speichereNachricht(Nachricht nachricht)
     {
-        if(this.nachricht != null)
-        {
-            return false;
-        }
-        
-        this.nachricht = nachricht;
-        
-        return true;
+        return this.nachrichten.add(nachricht);
     }
     
     /**
@@ -50,11 +44,17 @@ public class Post
     {
         Nachricht returnValue = null;
         
-        if(nachricht != null && nachricht.gibEmpfaenger() == kundenName)
-        {
-            returnValue = this.nachricht;
-            this.nachricht = null;
+        for(Nachricht nachricht : nachrichten)
+        {   
+            if(nachricht != null && nachricht.gibEmpfaenger() == kundenName)
+            {
+                returnValue = nachricht;
+                break;
+            }
         }
+        
+        if(returnValue != null)
+            this.nachrichten.remove(returnValue);
         
         return returnValue;
     }
