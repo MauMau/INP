@@ -35,7 +35,7 @@ public class Person
         return vorname;
     }
     
-    public String setzeVorname(String vorname)
+    public void setzeVorname(String vorname)
     {
         this.vorname = vorname;
     }
@@ -45,9 +45,9 @@ public class Person
         return telNr;
     }
     
-    public String setzeHandyNr(String handyNr)
+    public void setzeTelNr(String telNr)
     {
-        this.handyNr = handyNr;
+        this.telNr = telNr;
     }
     
     public String gibHandyNr()
@@ -55,7 +55,7 @@ public class Person
         return handyNr;
     }
     
-    public String setzeHandyNr(String handyNr)
+    public void setzeHandyNr(String handyNr)
     {
         this.handyNr = handyNr;
     }

@@ -70,4 +70,11 @@ public class Personenverwaltung
         
         return -1;
     }
+    
+    public void personEinfuegen(String vorname, String nachname, int alter, String telnummer, String handynummer)
+    {
+        Person p = new Person(nachname, vorname, telnummer, handynummer, alter);
+        
+        personen.add(p);
+    }
 }
