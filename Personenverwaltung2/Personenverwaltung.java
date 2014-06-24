@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 import java.util.HashMap;
 
 public class Personenverwaltung
@@ -273,6 +275,14 @@ public class Personenverwaltung
         }
         
         personen.removeAll(zuEntfernen);
+    }
+    
+    public Person gibPersonAusListeZufaellig()
+    {
+        Random r = new Random();
+        int zufall = r.nextInt(personen.size());
+        
+        return personen.get(zufall);
     }
 }
 
