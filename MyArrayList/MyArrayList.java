@@ -113,7 +113,7 @@ public class MyArrayList
     
     private void ensureArraySize(int numberOfItemsToAdd)
     {
-        if(_content.length <= this.size() + numberOfItemsToAdd)
+        if(_content.length <= this.size() + numberOfItemsToAdd + 1)
         {
             Person[] oldArray = _content;
             

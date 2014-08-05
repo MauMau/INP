@@ -77,6 +77,7 @@ public class ArrayTester
         l.add(new Person("9"));
         System.out.println("9. Objekt eingefügt, Grösse: " + l.getArraySize());
         l.add(new Person("10"));
+        System.out.println("10. Objekt eingefügt, Grösse: " + l.getArraySize());
         l.add(new Person("11"));
         System.out.println("11. Objekt eingefügt, Grösse: " + l.getArraySize());
         l.add(new Person("12"));
