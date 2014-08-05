@@ -29,6 +29,9 @@ public class MyArrayList
     {
         ensureArraySize(1);
         
+        if(p == null)
+            return;
+        
         for(int i = _lastEmptyIndex; i > index; i--)
         {
             _content[i + 1] = _content[i];
@@ -76,6 +79,10 @@ public class MyArrayList
     
     public Person set(int index, Person p)
     {
+        if(p == null)
+        {
+            return remove(index);
+        }
         _content[index] = p;
         
         return p;
