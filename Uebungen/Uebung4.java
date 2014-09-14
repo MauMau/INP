@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Uebung4 here.
  * 
@@ -7,27 +7,18 @@
  */
 public class Uebung4
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Uebung4
-     */
-    public Uebung4()
+    public void Uebung4()
     {
-        // initialise instance variables
-        x = 0;
-    }
+        HashMap<String, String> _telefonbuch = new HashMap<String, String>();
+        
+        _telefonbuch.put("123456790", "Maurus Kühne");
+        _telefonbuch.put("0987654321", "Natascha Kühne");
+        
+        for(Map.Entry<String,String> entry : _telefonbuch.entrySet()) {
+            String telNr = entry.getKey();
+            String name = entry.getValue();
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+            System.out.println(telNr + " => " + name);
+        }
     }
 }
