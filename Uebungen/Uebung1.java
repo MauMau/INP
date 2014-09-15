@@ -13,7 +13,7 @@ public class Uebung1
         HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
         
         long startTime = System.currentTimeMillis();
-        for(int i = 0; i < anzahl; i++)
+        for(int i = anzahl; i >= 0; i--)
         {
             hashMap.put(i, i);
         }
@@ -36,7 +36,7 @@ public class Uebung1
         TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
         
         long startTime = System.currentTimeMillis();
-        for(int i = 0; i < anzahl; i++)
+        for(int i = anzahl; i >= 0; i--)
         {
             treeMap.put(i, i);
         }
