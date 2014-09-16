@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ getNachname()
+comment1.params=
+comment1.target=java.lang.String\ getVorname()
+comment2.params=nachname
+comment2.target=void\ setNachname(java.lang.String)
+comment3.params=vorname
+comment3.target=void\ setVorname(java.lang.String)
+comment4.params=
+comment4.target=int\ getAnzahlInitialisiertePersonen()
+comment5.params=vorname\ nachname
+comment5.target=Uebung1(java.lang.String,\ java.lang.String)
+numComments=6
